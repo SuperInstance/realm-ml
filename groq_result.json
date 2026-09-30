@@ -1,0 +1,84 @@
+{
+ "chat": [
+  {
+   "label": "claw",
+   "truth": 0,
+   "pred": 0,
+   "raw": "CONTRADICTED",
+   "sec": 0.4212782382965088
+  },
+  {
+   "label": "forgemaster",
+   "truth": 0,
+   "pred": 0,
+   "raw": "CONTRADICTED",
+   "sec": 0.3389906883239746
+  },
+  {
+   "label": "canary",
+   "truth": 1,
+   "pred": 1,
+   "raw": "SUPPORTED",
+   "sec": 0.37268900871276855
+  },
+  {
+   "label": "egg",
+   "truth": 1,
+   "pred": 0,
+   "raw": "CONTRADICTED",
+   "sec": 0.6086559295654297
+  },
+  {
+   "label": "vectorize",
+   "truth": 0,
+   "pred": 0,
+   "raw": "CONTRADICTED",
+   "sec": 0.42215704917907715
+  },
+  {
+   "label": "pincher",
+   "truth": 1,
+   "pred": 1,
+   "raw": "SUPPORTED",
+   "sec": 0.3715665340423584
+  }
+ ],
+ "guard": [
+  {
+   "label": "claw",
+   "truth": 0,
+   "score": 0.0008607169147580862,
+   "raw": "0.000860716914758086"
+  },
+  {
+   "label": "forgemaster",
+   "truth": 0,
+   "score": 0.0013340712757781148,
+   "raw": "0.001334071275778114"
+  },
+  {
+   "label": "canary",
+   "truth": 1,
+   "score": 0.0007727271295152605,
+   "raw": "0.000772727129515260"
+  },
+  {
+   "label": "egg",
+   "truth": 1,
+   "score": 0.0006864772294647992,
+   "raw": "0.000686477229464799"
+  },
+  {
+   "label": "vectorize",
+   "truth": 0,
+   "score": 0.000857769453432411,
+   "raw": "0.000857769453432411"
+  },
+  {
+   "label": "pincher",
+   "truth": 1,
+   "score": 0.0007621137774549425,
+   "raw": "0.000762113777454942"
+  }
+ ]
+}
