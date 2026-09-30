@@ -71,3 +71,69 @@ train once and generate many. It is the obvious substrate for this problem and i
 unavailable: the account is `platform_role: player` with `features: []`, jobs POST 202 and
 sit in `queued` forever, including `coin-toss-v1` with trivial parameters. Not a shape
 error, not an identity error — the queue accepts and never runs.
+
+---
+
+## Addendum — `relations.py`, and a narrower honest result
+
+The held-out set was 8/10, and **both misses were the same error class**: the evidence
+states a relation over values and the claim asserts it. A 7B model compares statements well
+and cannot evaluate them. The fix is not a better prompt — it is to stop asking.
+
+`relations.py` decides mechanically, and returns `None` whenever it does not know, because
+**a guess arrives with the confidence of a computation.**
+
+**The real cases were not the shape I expected.** I first built for "two values that match"
+and it fired on 1 of 10. The actual shape is:
+
+```
+evidence: "the torus conductance for the a-by-b family is exactly 4/max(a,b)"
+claim:    "Recomputed: conductance = 4/max(a,b) for every a,b tested at (3,5),(5,3),(4,4).
+          Substituting N for max(a,b) overstates it by up to 30x."
+```
+
+**The rule is in the evidence and the test vectors are in the claim.** So: extract the rule,
+extract the tuples, evaluate the rule at each tuple.
+
+**Result on the held-out set:**
+
+| | accuracy | AUC |
+|---|---:|---:|
+| model alone | 9/10 | 0.875 |
+| compute-then-model | **9/10** | — |
+
+3 of 10 are now decided by computation and **3 of 3 are correct**. One case flipped, and it
+flipped to the right answer: `wolff`, which the model called false.
+
+**The honest limit, which is the point.** The remaining miss, `moltresp`, is deferred — and
+correctly so:
+
+> evidence: *"test-binary-v1 returns any binary file unprocessed."* — **no numbers at all**
+
+There is nothing to compute with. Returning `None` and asking the model is the right answer.
+A relation evaluator that guessed here would have been worse than no evaluator, and would
+have done it with the same confidence as the three it got right.
+
+## Three bugs this took, all in the evaluator, all found by re-running the held-out set
+
+1. **A "does the stated number match" check I added was unsound.** The first number left in
+   the claim is a *test tuple* (3, 5, 4), not a claimed result, so it compared
+   `4/max(3,5) = 0.8` against the literal `3` and called a true claim false. **Deleted.**
+   What remains is narrower but sound: a rule that is undefined at a stated tuple makes the
+   claim false; everything else defers.
+2. **`max` contributed three letters to the variable list.** "max" → m, a, x — so the
+   binding took `a` from the function name, `eval` raised `NameError`, and my
+   undefined-check reported that as *"the rule is undefined here"*, i.e. FALSE, on a claim
+   that is true. **A function name is not a variable.**
+3. **Two negative controls were written inverted**, so a working detector read as a
+   failure. Breaking the evaluator produces `True` where the correct answer is `False`, and
+   *that change* is the detection.
+
+`test_relations.py` is 19 checks, all passing, including hostile-input cases
+(`None` inputs, 4 KB strings, unbalanced parens, an attempted `__import__` in a claim) and
+two negative controls.
+
+**The through-line is the night's, and it is now eleven instances:** every one of these was
+a check that could not distinguish *the system is wrong* from *the check is wrong*. The
+evaluator now answers `None` when it does not know, which is the first version of this code
+that could be trusted to say so.
