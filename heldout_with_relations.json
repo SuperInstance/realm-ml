@@ -1,0 +1,72 @@
+[
+ {
+  "case": "moltresp",
+  "truth": 1,
+  "model": 0,
+  "final": 0,
+  "computed": false
+ },
+ {
+  "case": "wolff",
+  "truth": 1,
+  "model": 0,
+  "final": true,
+  "computed": true
+ },
+ {
+  "case": "wolff_bad",
+  "truth": 0,
+  "model": 0,
+  "final": false,
+  "computed": true
+ },
+ {
+  "case": "moth_stoch",
+  "truth": 0,
+  "model": 0,
+  "final": 0,
+  "computed": false
+ },
+ {
+  "case": "moth_stoch2",
+  "truth": 1,
+  "model": 1,
+  "final": 1,
+  "computed": false
+ },
+ {
+  "case": "github",
+  "truth": 1,
+  "model": 1,
+  "final": 1,
+  "computed": false
+ },
+ {
+  "case": "github_bad",
+  "truth": 0,
+  "model": 0,
+  "final": 0,
+  "computed": false
+ },
+ {
+  "case": "canary_bad",
+  "truth": 0,
+  "model": 0,
+  "final": false,
+  "computed": true
+ },
+ {
+  "case": "repair",
+  "truth": 0,
+  "model": 0,
+  "final": 0,
+  "computed": false
+ },
+ {
+  "case": "repair2",
+  "truth": 0,
+  "model": 0,
+  "final": 0,
+  "computed": false
+ }
+]
