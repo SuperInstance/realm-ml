@@ -1,0 +1,158 @@
+[
+ {
+  "label": "claw",
+  "truth": 0,
+  "pred": 0,
+  "route": "asked"
+ },
+ {
+  "label": "claw2",
+  "truth": 0,
+  "pred": 0,
+  "route": "asked"
+ },
+ {
+  "label": "forgemaster",
+  "truth": 0,
+  "pred": 0,
+  "route": "asked"
+ },
+ {
+  "label": "vectorize",
+  "truth": 0,
+  "pred": 0,
+  "route": "asked"
+ },
+ {
+  "label": "tps",
+  "truth": 0,
+  "pred": 0,
+  "route": "asked"
+ },
+ {
+  "label": "subagent",
+  "truth": 0,
+  "pred": 0,
+  "route": "asked"
+ },
+ {
+  "label": "mothorder",
+  "truth": 0,
+  "pred": 0,
+  "route": "asked"
+ },
+ {
+  "label": "family",
+  "truth": 0,
+  "pred": 0,
+  "route": "asked"
+ },
+ {
+  "label": "qthe",
+  "truth": 0,
+  "pred": 0,
+  "route": "asked"
+ },
+ {
+  "label": "zeppos",
+  "truth": 0,
+  "pred": 0,
+  "route": "asked"
+ },
+ {
+  "label": "canary",
+  "truth": 1,
+  "pred": 1,
+  "route": "asked"
+ },
+ {
+  "label": "aperture",
+  "truth": 1,
+  "pred": 1,
+  "route": "asked"
+ },
+ {
+  "label": "egg",
+  "truth": 1,
+  "pred": 1,
+  "route": "computed"
+ },
+ {
+  "label": "egg_inverted",
+  "truth": 0,
+  "pred": 0,
+  "route": "computed"
+ },
+ {
+  "label": "egg_tie",
+  "truth": 0,
+  "pred": 0,
+  "route": "asked"
+ },
+ {
+  "label": "pincher",
+  "truth": 1,
+  "pred": 1,
+  "route": "asked"
+ },
+ {
+  "label": "pollnci",
+  "truth": 1,
+  "pred": 1,
+  "route": "asked"
+ },
+ {
+  "label": "wheel",
+  "truth": 1,
+  "pred": 1,
+  "route": "asked"
+ },
+ {
+  "label": "wraps",
+  "truth": null,
+  "pred": 0,
+  "route": "asked"
+ },
+ {
+  "label": "pollln",
+  "truth": 1,
+  "pred": 1,
+  "route": "asked"
+ },
+ {
+  "label": "workerskv",
+  "truth": null,
+  "pred": 0,
+  "route": "asked"
+ },
+ {
+  "label": "registrator",
+  "truth": null,
+  "pred": 1,
+  "route": "asked"
+ },
+ {
+  "label": "juliacanary",
+  "truth": 0,
+  "pred": 0,
+  "route": "asked"
+ },
+ {
+  "label": "readmeclaim",
+  "truth": 0,
+  "pred": 0,
+  "route": "repair-detected"
+ },
+ {
+  "label": "narrator",
+  "truth": 0,
+  "pred": 0,
+  "route": "asked"
+ },
+ {
+  "label": "signature",
+  "truth": 0,
+  "pred": 0,
+  "route": "asked"
+ }
+]
